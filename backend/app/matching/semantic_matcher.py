@@ -27,23 +27,38 @@ def compute_semantic_matches(
     Returns:
         (newly_matched, still_unmatched, avg_semantic_score)
     """
-    if model is None or not resume_sentences or not unmatched:
+    if not resume_sentences or not unmatched:
         return [], unmatched, 0.0
 
     try:
-        # Encode resume sentences once
         req_texts = [r.requirement for r in unmatched]
-        resume_embeddings = model.encode(resume_sentences, convert_to_numpy=True, show_progress_bar=False)
-        req_embeddings = model.encode(req_texts, convert_to_numpy=True, show_progress_bar=False)
 
-        # Normalize for cosine similarity
-        resume_norms = np.linalg.norm(resume_embeddings, axis=1, keepdims=True)
-        req_norms = np.linalg.norm(req_embeddings, axis=1, keepdims=True)
-        resume_normalized = resume_embeddings / np.maximum(resume_norms, 1e-8)
-        req_normalized = req_embeddings / np.maximum(req_norms, 1e-8)
+        if model is not None:
+            # Encode resume sentences with SentenceTransformer
+            resume_embeddings = model.encode(resume_sentences, convert_to_numpy=True, show_progress_bar=False)
+            req_embeddings = model.encode(req_texts, convert_to_numpy=True, show_progress_bar=False)
 
-        # Cosine similarity matrix: (n_reqs, n_sentences)
-        similarity_matrix = req_normalized @ resume_normalized.T
+            # Normalize for cosine similarity
+            resume_norms = np.linalg.norm(resume_embeddings, axis=1, keepdims=True)
+            req_norms = np.linalg.norm(req_embeddings, axis=1, keepdims=True)
+            resume_normalized = resume_embeddings / np.maximum(resume_norms, 1e-8)
+            req_normalized = req_embeddings / np.maximum(req_norms, 1e-8)
+
+            # Cosine similarity matrix: (n_reqs, n_sentences)
+            similarity_matrix = req_normalized @ resume_normalized.T
+        else:
+            # Fallback: TF-IDF vector cosine similarity using scikit-learn
+            from sklearn.feature_extraction.text import TfidfVectorizer
+            from sklearn.metrics.pairwise import cosine_similarity
+
+            vectorizer = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
+            corpus = resume_sentences + req_texts
+            tfidf_matrix = vectorizer.fit_transform(corpus)
+
+            resume_tfidf = tfidf_matrix[:len(resume_sentences)]
+            req_tfidf = tfidf_matrix[len(resume_sentences):]
+
+            similarity_matrix = cosine_similarity(req_tfidf, resume_tfidf)
 
         newly_matched = []
         still_unmatched = []
