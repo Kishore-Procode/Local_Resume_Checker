@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+  }
+}
+
+@layer components {
+  /* Glass card */
+  .glass-card {
+    @apply bg-surface-800 border border-white/10 rounded-2xl;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
+           bg-gradient-to-r from-brand-500 to-violet-500
+           hover:from-brand-400 hover:to-violet-400
+           active:scale-95 transition-all duration-200
+           shadow-lg shadow-brand-500/25
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-slate-300
+           bg-surface-700 border border-white/10
+           hover:bg-surface-600 hover:border-white/20
+           active:scale-95 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Score badge */
+  .score-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-lg font-semibold text-slate-100 flex items-center gap-2;
+  }
+
+  /* Stat label */
+  .stat-label {
+    @apply text-xs font-medium text-slate-400 uppercase tracking-wider;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply h-2 rounded-full bg-surface-700 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  /* Match type badges */
+  .badge-exact {
+    @apply score-badge bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .badge-fuzzy {
+    @apply score-badge bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .badge-semantic {
+    @apply score-badge bg-violet-500/20 text-violet-400 border border-violet-500/30;
+  }
+
+  .badge-weak {
+    @apply score-badge bg-amber-500/20 text-amber-400 border border-amber-500/30;
+  }
+
+  .badge-missing {
+    @apply score-badge bg-rose-500/20 text-rose-400 border border-rose-500/30;
+  }
+
+  /* Severity badges */
+  .badge-critical {
+    @apply score-badge bg-rose-500/20 text-rose-400 border border-rose-500/30;
+  }
+
+  .badge-high {
+    @apply score-badge bg-orange-500/20 text-orange-400 border border-orange-500/30;
+  }
+
+  .badge-medium {
+    @apply score-badge bg-amber-500/20 text-amber-400 border border-amber-500/30;
+  }
+
+  .badge-low {
+    @apply score-badge bg-slate-500/20 text-slate-400 border border-slate-500/30;
+  }
+
+  /* Tab */
+  .tab-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+           text-slate-400 hover:text-slate-200 hover:bg-surface-700;
+  }
+
+  .tab-btn-active {
+    @apply tab-btn text-white bg-brand-600;
+  }
+
+  /* Input */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-surface-700 border border-white/10
+           text-slate-100 placeholder-slate-500
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  /* Textarea */
+  .textarea-field {
+    @apply input-field resize-none;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-2.5 py-1.5 bg-surface-700 border border-white/10
+           rounded-lg text-xs text-slate-300 shadow-xl
+           pointer-events-none whitespace-nowrap;
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    @apply bg-surface-700 rounded animate-pulse;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-white/10 my-4;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.4);
+  }
+
+  .glow-blue {
+    box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.35);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 20px -5px rgba(34, 197, 94, 0.4);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 20px -5px rgba(239, 68, 68, 0.4);
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 5s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: floatSlow 5s ease-in-out 2.5s infinite;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

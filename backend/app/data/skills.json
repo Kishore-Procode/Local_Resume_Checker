@@ -1,0 +1,110 @@
+{
+  "Programming Languages": [
+    "Python", "JavaScript", "TypeScript", "Java", "C", "C++", "C#", "Go", "Rust",
+    "Ruby", "PHP", "Swift", "Kotlin", "Scala", "R", "MATLAB", "Perl", "Bash",
+    "Shell", "PowerShell", "Haskell", "Elixir", "Clojure", "Dart", "Lua", "Julia",
+    "Assembly", "COBOL", "Fortran", "Groovy", "Objective-C"
+  ],
+  "Frontend": [
+    "React.js", "Vue.js", "Angular", "Svelte", "Next.js", "Nuxt.js", "Gatsby",
+    "HTML", "CSS", "SASS", "SCSS", "LESS", "Tailwind CSS", "Bootstrap", "Material UI",
+    "Chakra UI", "Ant Design", "jQuery", "Redux", "Zustand", "MobX", "Recoil",
+    "Webpack", "Vite", "Parcel", "Rollup", "Babel", "ESLint", "Prettier",
+    "Storybook", "Figma", "Adobe XD", "Responsive Design", "Web Accessibility",
+    "Progressive Web Apps", "WebSockets", "GraphQL Client", "REST Client",
+    "React Native", "Ionic", "Electron"
+  ],
+  "Backend": [
+    "FastAPI", "Django", "Flask", "Node.js", "Express.js", "Spring Boot", "Spring",
+    "Laravel", "Ruby on Rails", "ASP.NET", ".NET", "NestJS", "Fastify", "Gin",
+    "Echo", "Fiber", "Actix", "Rocket", "Sinatra", "Koa", "Hapi.js",
+    "REST API", "GraphQL", "gRPC", "WebSockets", "Microservices", "Serverless",
+    "API Design", "OAuth", "JWT", "Authentication", "Authorization",
+    "Message Queue", "RabbitMQ", "Apache Kafka", "Celery", "Background Tasks",
+    "Caching", "Session Management", "Middleware", "API Gateway"
+  ],
+  "Databases": [
+    "PostgreSQL", "MySQL", "SQLite", "Microsoft SQL Server", "Oracle",
+    "MongoDB", "Redis", "Elasticsearch", "Cassandra", "DynamoDB",
+    "Firebase", "Firestore", "CouchDB", "Neo4j", "InfluxDB", "TimescaleDB",
+    "SQL", "NoSQL", "Database Design", "Data Modeling", "ORM",
+    "SQLAlchemy", "Prisma", "Sequelize", "Hibernate", "Entity Framework",
+    "Database Optimization", "Query Optimization", "Indexing", "Migrations",
+    "Data Warehousing", "ETL", "Apache Spark", "Apache Hadoop", "Snowflake", "BigQuery"
+  ],
+  "Cloud": [
+    "AWS", "Google Cloud Platform", "Microsoft Azure", "DigitalOcean", "Heroku",
+    "Vercel", "Netlify", "Cloudflare", "Oracle Cloud",
+    "AWS S3", "AWS EC2", "AWS Lambda", "AWS RDS", "AWS ECS", "AWS EKS",
+    "AWS CloudFormation", "AWS CloudWatch", "AWS IAM", "AWS VPC",
+    "Google Compute Engine", "Google Cloud Storage", "Google Cloud Functions",
+    "Azure Functions", "Azure App Service", "Azure DevOps",
+    "Cloud Architecture", "Serverless Architecture", "Cloud Security",
+    "CDN", "Load Balancing", "Auto Scaling", "Cloud Networking"
+  ],
+  "DevOps": [
+    "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "GitLab CI", "Jenkins",
+    "CircleCI", "Travis CI", "ArgoCD", "Helm", "Terraform", "Ansible", "Puppet",
+    "Chef", "Vagrant", "Packer", "Nginx", "Apache", "Linux", "Unix",
+    "Infrastructure as Code", "Configuration Management", "Monitoring",
+    "Prometheus", "Grafana", "ELK Stack", "Datadog", "New Relic",
+    "Log Management", "Alerting", "SRE", "DevSecOps", "GitOps",
+    "Container Orchestration", "Service Mesh", "Istio", "Envoy"
+  ],
+  "AI/ML": [
+    "Machine Learning", "Deep Learning", "Neural Networks", "Natural Language Processing",
+    "Computer Vision", "Reinforcement Learning", "Generative AI", "LLM",
+    "TensorFlow", "PyTorch", "Keras", "scikit-learn", "XGBoost", "LightGBM",
+    "Hugging Face", "OpenCV", "NLTK", "spaCy", "Transformers",
+    "Data Science", "Feature Engineering", "Model Training", "Model Deployment",
+    "MLOps", "A/B Testing", "Statistical Analysis", "Data Analysis",
+    "Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly",
+    "Jupyter", "Colab", "Model Evaluation", "Hyperparameter Tuning",
+    "Transfer Learning", "Fine-tuning", "Prompt Engineering",
+    "Recommendation Systems", "Anomaly Detection", "Time Series Analysis",
+    "Classification", "Regression", "Clustering", "Dimensionality Reduction"
+  ],
+  "Data Science": [
+    "Data Analysis", "Data Visualization", "Statistical Modeling", "Pandas",
+    "NumPy", "SciPy", "Matplotlib", "Seaborn", "Plotly", "Tableau", "Power BI",
+    "Excel", "R", "SPSS", "Statistical Analysis", "Hypothesis Testing",
+    "Data Cleaning", "Data Wrangling", "Exploratory Data Analysis",
+    "Business Intelligence", "Data Pipeline", "Data Engineering",
+    "Apache Airflow", "dbt", "Data Lake", "Data Warehouse"
+  ],
+  "Testing": [
+    "Unit Testing", "Integration Testing", "End-to-End Testing", "TDD", "BDD",
+    "pytest", "Jest", "Mocha", "Jasmine", "Cypress", "Playwright", "Selenium",
+    "JUnit", "TestNG", "Mockito", "unittest", "Robot Framework",
+    "Performance Testing", "Load Testing", "Security Testing", "API Testing",
+    "Postman", "Insomnia", "Test Automation", "Quality Assurance", "QA",
+    "Code Review", "Static Analysis", "Code Coverage"
+  ],
+  "Mobile": [
+    "iOS Development", "Android Development", "React Native", "Flutter", "Xamarin",
+    "Swift", "SwiftUI", "Kotlin", "Java Android", "Ionic", "Cordova",
+    "Mobile UI/UX", "App Store", "Google Play", "Mobile Testing",
+    "Push Notifications", "Mobile Security", "Mobile Performance"
+  ],
+  "Tools": [
+    "Git", "GitHub", "GitLab", "Bitbucket", "Jira", "Confluence", "Trello",
+    "Slack", "Microsoft Teams", "Notion", "Asana", "Linear",
+    "VS Code", "IntelliJ IDEA", "PyCharm", "Eclipse", "Vim", "Emacs",
+    "Postman", "Insomnia", "Swagger", "OpenAPI",
+    "Figma", "Adobe XD", "Sketch", "Zeplin", "InVision",
+    "Agile", "Scrum", "Kanban", "SDLC", "Code Review"
+  ],
+  "Design": [
+    "UI Design", "UX Design", "Figma", "Adobe XD", "Sketch", "InVision",
+    "Wireframing", "Prototyping", "Design Systems", "Responsive Design",
+    "Typography", "Color Theory", "User Research", "Usability Testing",
+    "Accessibility", "WCAG", "Material Design", "Human Interface Guidelines"
+  ],
+  "Soft Skills": [
+    "Communication", "Leadership", "Teamwork", "Problem Solving", "Critical Thinking",
+    "Time Management", "Project Management", "Mentoring", "Collaboration",
+    "Adaptability", "Creativity", "Attention to Detail", "Organization",
+    "Presentation", "Negotiation", "Conflict Resolution", "Decision Making",
+    "Analytical Thinking", "Strategic Planning", "Cross-functional Collaboration"
+  ]
+}
