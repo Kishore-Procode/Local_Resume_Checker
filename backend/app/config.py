@@ -14,7 +14,7 @@ SCORE_WEIGHTS: Dict[str, float] = {
 }
 
 # ─── Semantic Model ───────────────────────────────────────────────────────────
-SEMANTIC_MODEL_NAME = "all-MiniLM-L6-v2"
+SEMANTIC_MODEL_NAME = "tfidf-fallback"
 SEMANTIC_THRESHOLD = 0.60       # cosine similarity minimum for a semantic match
 SEMANTIC_TOP_K = 3              # top-k resume sentences to retrieve per requirement
 

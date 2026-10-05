@@ -1,6 +1,6 @@
 """
 FastAPI application entry point.
-Loads the sentence-transformers model once at startup.
+Uses the lightweight fallback semantic matcher so the app stays Vercel-friendly.
 """
 import os
 import tempfile
@@ -31,16 +31,9 @@ _resume_store: dict = {}
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Load the sentence-transformers model on startup."""
-    print(f"[startup] Loading semantic model: {SEMANTIC_MODEL_NAME}")
-    try:
-        from sentence_transformers import SentenceTransformer
-        app.state.semantic_model = SentenceTransformer(SEMANTIC_MODEL_NAME)
-        print(f"[startup] Semantic model loaded successfully.")
-    except Exception as e:
-        print(f"[startup] WARNING: Could not load semantic model: {e}")
-        print("[startup] Analysis will proceed without semantic matching.")
-        app.state.semantic_model = None
+    """Initialize the app without downloading large ML artifacts."""
+    app.state.semantic_model = None
+    print("[startup] Semantic model disabled; using lightweight fallback matching.")
 
     yield
 
