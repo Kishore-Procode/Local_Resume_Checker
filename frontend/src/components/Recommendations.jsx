@@ -1,6 +1,6 @@
-import { Lightbulb, CheckCircle2, XCircle, ChevronRight } from 'lucide-react'
+import { Lightbulb, CheckCircle2, XCircle, ChevronRight, Sparkles, Wand2, ArrowRight } from 'lucide-react'
 
-export default function Recommendations({ recommendations, strengths, weaknesses }) {
+export default function Recommendations({ recommendations, strengths, weaknesses, onGoToPrompts }) {
   if (!recommendations?.length && !strengths?.length && !weaknesses?.length) return null
 
   return (
@@ -73,6 +73,29 @@ export default function Recommendations({ recommendations, strengths, weaknesses
               </li>
             ))}
           </ol>
+        </div>
+      )}
+
+      {/* Claude Prompt CTA Banner */}
+      {onGoToPrompts && (
+        <div className="p-5 rounded-2xl bg-gradient-to-r from-purple-950/70 via-indigo-950/70 to-slate-900 border border-purple-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4 shadow-xl">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-purple-300 font-bold text-sm">
+              <Sparkles size={16} className="text-purple-400 animate-pulse" />
+              Fix These Gaps with Claude AI
+            </div>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Get an exact ATS prompt tailored to your missing skills and recommendations to rewrite your resume.
+            </p>
+          </div>
+          <button
+            onClick={onGoToPrompts}
+            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold transition flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-lg shadow-purple-600/30"
+          >
+            <Wand2 size={14} />
+            View Claude Prompts
+            <ArrowRight size={14} />
+          </button>
         </div>
       )}
 

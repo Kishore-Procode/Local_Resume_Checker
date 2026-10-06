@@ -7,6 +7,7 @@ import ResumeQuality from '../components/ResumeQuality.jsx'
 import ParsingAnalysis from '../components/ParsingAnalysis.jsx'
 import Recommendations from '../components/Recommendations.jsx'
 import Charts from '../components/Charts.jsx'
+import PromptSection from '../components/PromptSection.jsx'
 
 const SECTIONS_CONFIG = {
   contact: 'Contact',
@@ -79,6 +80,7 @@ const SkillsSummary = ({ skills }) => (
 
 const TABS = [
   { id: 'overview', label: 'Overview' },
+  { id: 'prompts', label: 'Claude Prompts ✨' },
   { id: 'matching', label: 'Requirements' },
   { id: 'missing', label: 'Missing Skills' },
   { id: 'quality', label: 'Quality' },
@@ -176,11 +178,17 @@ export default function Dashboard({ analysis, onReset }) {
                 recommendations={recommendations}
                 strengths={strengths}
                 weaknesses={weaknesses}
+                onGoToPrompts={() => setActiveTab('prompts')}
               />
               <SectionStatusGrid sections={sections} />
               <SkillsSummary skills={resume_skills} />
             </div>
           </div>
+        )}
+
+        {/* Claude Prompts Tab */}
+        {activeTab === 'prompts' && (
+          <PromptSection analysis={analysis} />
         )}
 
         {/* Matching Tab */}
